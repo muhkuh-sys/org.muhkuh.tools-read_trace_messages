@@ -10,7 +10,8 @@ local pl = require'pl.import_into'()
 
 -- Copy all additional files.
 local atScripts = {
-  ['local/read_trace.lua']                        = '${install_base}/',
+  ['local/muhkuh_cli_init.lua']             = '${install_base}/',
+  ['local/read_trace.lua']                  = '${install_base}/',
 
   ['${report_path}']                        = '${install_base}/.jonchki/'
 }
@@ -21,10 +22,8 @@ end
 
 -- Install the CLI init script.
 if strDistId=='windows' then
-  t:install('local/windows/muhkuh_cli_init.lua', '${install_base}/')
   t:install('local/windows/read_trace.bat', '${install_base}/')
 elseif strDistId=='ubuntu' then
-  t:install('local/linux/muhkuh_cli_init.lua', '${install_base}/')
   t:install('local/linux/read_trace', '${install_base}/')
 end
 
