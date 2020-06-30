@@ -64,7 +64,7 @@ else
   local strData = _G.tester:stdRead(tPlugin, tAttr.start, tAttr.size)
 
   -- Write the data to a file.
-  local strFilename = '/aaaaa/bbbbb'
+  local strFilename = tArgs.strOutputFileName
   local tFile, strError = io.open(strFilename, 'wb')
   if tFile==nil then
     tLog.error('Failed to create the output file "%s": %s', strFilename, tostring(strError))
